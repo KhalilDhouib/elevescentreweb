@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Header from './pages/header/Header';
+import PostUser from './pages/eleves/PostUser';
+import Dashboard from './pages/dashboard/Dashboard';
+import Septieme from './pages/classes/septieme/Septieme';
+import Huitieme from './pages/classes/huitieme/Huitieme';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header /> 
+      <Routes>
+        <Route path='/' element={<Dashboard/>}></Route>
+        <Route path='/eleves' element={<PostUser/>}></Route>
+        <Route path='/septieme' element={<Septieme/>}></Route>
+        <Route path='/huitieme' element={<Huitieme/>}></Route>
+       
+      </Routes>
+    </>
   );
 }
 

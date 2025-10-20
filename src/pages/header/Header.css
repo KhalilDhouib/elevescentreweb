@@ -1,0 +1,87 @@
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar .navbar-brand {
+    margin-left: -20%;
+    color: #fff;
+}
+
+/* Style pour la navigation */
+.navbar .nav {
+    display: flex;
+    align-items: center;
+}
+
+/* style the navigation links */
+.navbar .nav-link {
+    color: #fff !important;
+    text-decoration: none !important;
+    margin-right: 20px;
+}
+
+/* Style pour le dropdown */
+.navbar .dropdown-toggle {
+    color: #fff !important;
+    background-color: transparent !important;
+    border: none;
+    margin-right: 20px;
+    padding: 8px 16px;
+}
+
+.navbar .dropdown-toggle:hover {
+    color: #fff !important;
+}
+
+.navbar .dropdown-menu {
+    background-color: #343a40;
+    border: 1px solid #495057;
+}
+
+.navbar .dropdown-item {
+    color: #fff !important;
+    padding: 8px 16px;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #495057;
+    color: #fff !important;
+}
+
+.navbar .dropdown-divider {
+    border-color: #495057;
+}
+
+/* Alignement des éléments */
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .ml-auto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Style pour le menu déroulant au survol */
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+/* Add media query for small screens */
+@media (max-width: 576px) {
+    .navbar .navbar-brand {
+        margin-left: 0;
+    }
+    
+    .navbar .nav-link {
+        margin-right: 10px;
+    }
+    
+    .navbar .dropdown-toggle {
+        margin-right: 10px;
+    }
+}

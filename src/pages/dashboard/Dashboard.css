@@ -1,0 +1,364 @@
+.dashboard-container {
+    background: linear-gradient(135deg, #667eea 0%, #d8f7ff 100%);
+    min-height: 100vh;
+}
+
+.dashboard-header {
+    background: #edf6f8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.header-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.header-icon {
+    color: #667eea;
+}
+
+.dashboard-title {
+    color: #2d3748;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    font-size: 1.75rem;
+}
+
+.dashboard-subtitle {
+    color: #718096;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.add-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.add-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* Styles pour les boutons de niveau - MODIFIÉ */
+.level-buttons-container {
+    display: flex;
+    flex-direction: row; /* Changé de column à row */
+    gap: 8px;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.level-buttons-row {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.level-button {
+    border: 2px solid #ff6b9d;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff8eb4 100%);
+    transition: all 0.3s ease;
+    min-width: 70px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
+}
+
+.level-button:hover {
+    background: linear-gradient(135deg, #ff8eb4 0%, #ff6b9d 100%);
+    border-color: #ff4d8d;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+    color: #ffffff;
+}
+
+.level-button:active,
+.level-button:focus {
+    background: linear-gradient(135deg, #ff4d8d 0%, #ff6b9d 100%);
+    border-color: #ff2d7a;
+    box-shadow: 0 2px 10px rgba(255, 107, 157, 0.5);
+    color: #ffffff;
+}
+
+/* Styles responsives pour les boutons */
+@media (max-width: 1200px) {
+    .level-buttons-container {
+        margin-right: 15px;
+    }
+    
+    .level-button {
+        min-width: 65px;
+        padding: 7px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .level-buttons-container {
+        margin-right: 10px;
+    }
+    
+    .level-buttons-row {
+        gap: 6px;
+    }
+    
+    .level-button {
+        min-width: 60px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .level-buttons-container {
+        display: none; /* Cache les boutons sur mobile */
+    }
+}
+
+/* Ajustement du header pour accommoder les nouveaux boutons */
+.dashboard-header .row {
+    flex-wrap: nowrap;
+}
+
+.dashboard-header .col {
+    flex: 1;
+}
+
+.dashboard-header .col-auto {
+    flex: 0 0 auto;
+}
+
+/* Carte de statistique unique */
+.stat-card {
+    border: none;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #718096;
+    font-weight: 500;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+/* Carte de recherche */
+.search-card {
+    border: none;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-input {
+    border: none;
+    background: rgba(248, 250, 252, 0.8);
+    border-radius: 12px;
+    padding: 12px 16px;
+}
+
+.search-input:focus {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-badge {
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-weight: 600;
+}
+
+/* Carte du tableau */
+.table-card {
+    border: none;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+.table-header {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    border: none;
+    padding: 1.5rem 2rem;
+}
+
+.table-header h5 {
+    color: white;
+    margin: 0;
+    font-weight: 600;
+}
+
+.table-dark {
+    background: #4a5568;
+    margin: 0;
+}
+
+.table-dark th {
+    border: none;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.table-row {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table-row:hover {
+    background: rgba(102, 126, 234, 0.05);
+    transform: scale(1.01);
+}
+
+.table-row td {
+    padding: 1.25rem 1.5rem;
+    vertical-align: middle;
+    border: none;
+}
+
+/* Avatar circulaire */
+.avatar-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.student-name {
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.25rem;
+}
+
+.contact-info, .phone-info {
+    font-weight: 500;
+    color: #4a5568;
+}
+
+/* Badges de niveau */
+.niveau-badge {
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+/* Boutons d'action */
+.action-btn {
+    border-radius: 10px;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+    border-width: 2px;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* État vide */
+.empty-state {
+    color: #718096;
+}
+
+.empty-state h5 {
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-title {
+        font-size: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .table-row td {
+        padding: 1rem;
+    }
+    
+    .avatar-circle {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card, .search-card, .table-card {
+    animation: fadeIn 0.6s ease-out;
+}
