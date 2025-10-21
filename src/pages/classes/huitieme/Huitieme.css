@@ -1,0 +1,307 @@
+/* Supprimer les marges et padding par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.huitieme-wrapper {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.huitieme-container {
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #d8f7ff 100%);
+    margin: 0;
+    max-width: 100%;
+}
+
+/* Styles pour l'en-tête */
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+/* Bouton d'ajout */
+.add-btn {
+    border: none;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.9);
+    color: #667eea;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-btn:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.add-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Styles pour les cartes de matières */
+.matiere-card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.matiere-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.matiere-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Couleurs des cartes */
+.matiere-primary::before { background: linear-gradient(90deg, #007bff, #0056b3); }
+.matiere-success::before { background: linear-gradient(90deg, #28a745, #1e7e34); }
+.matiere-info::before { background: linear-gradient(90deg, #17a2b8, #117a8b); }
+.matiere-warning::before { background: linear-gradient(90deg, #ffc107, #e0a800); }
+.matiere-danger::before { background: linear-gradient(90deg, #dc3545, #c82333); }
+.matiere-secondary::before { background: linear-gradient(90deg, #6c757d, #545b62); }
+
+/* Bouton de suppression */
+.delete-btn-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.delete-btn {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0;
+    border: none;
+}
+
+.matiere-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.matiere-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.matiere-description {
+    color: #6c757d;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Dropdown personnalisé */
+.matiere-dropdown {
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+/* Modal personnalisé */
+.modal-header-custom {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-bottom: none;
+}
+
+.modal-body-custom {
+    background: #f8f9fa;
+    padding: 2rem;
+}
+
+.modal-footer-custom {
+    background: white;
+    border-top: 1px solid #dee2e6;
+    padding: 1rem 2rem;
+}
+
+/* Grille d'icônes */
+.icons-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.icon-option {
+    font-size: 1.5rem;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.icon-option:hover {
+    border-color: #667eea;
+    transform: scale(1.1);
+}
+
+.icon-option.selected {
+    border-color: #667eea;
+    background-color: #e3f2fd;
+}
+
+/* Grille de couleurs */
+.colors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.color-option {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.color-option:hover {
+    transform: scale(1.05);
+}
+
+.color-option.selected {
+    border-color: #2c3e50;
+    transform: scale(1.05);
+}
+
+/* Couleurs des options */
+.color-option.primary { background-color: #007bff; color: white; }
+.color-option.success { background-color: #28a745; color: white; }
+.color-option.info { background-color: #17a2b8; color: white; }
+.color-option.warning { background-color: #ffc107; color: black; }
+.color-option.danger { background-color: #dc3545; color: white; }
+.color-option.secondary { background-color: #6c757d; color: white; }
+
+/* Animation d'entrée */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.matiere-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.matiere-card:nth-child(1) { animation-delay: 0.1s; }
+.matiere-card:nth-child(2) { animation-delay: 0.2s; }
+.matiere-card:nth-child(3) { animation-delay: 0.3s; }
+.matiere-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+    }
+    
+    .matiere-icon {
+        font-size: 3rem;
+    }
+    
+    .matiere-title {
+        font-size: 1.2rem;
+    }
+    
+    .icons-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .colors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .huitieme-container {
+        padding: 1.5rem 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .icons-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .huitieme-container {
+        padding: 1rem 0.5rem;
+    }
+}
+
+/* Supprimer les espaces blancs sur les côtés */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
